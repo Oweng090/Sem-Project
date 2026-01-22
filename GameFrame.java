@@ -20,7 +20,9 @@ public class GameFrame extends JFrame {
         this.getContentPane().setBackground(Color.LIGHT_GRAY);
         // Create panel and button for start
         JPanel panel = new JPanel();
+        panel.setBackground(Color.DARK_GRAY);
         JButton button1 = new JButton("START");
+        button1.setBackground(Color.LIGHT_GRAY);
         // add panel with button to window
         this.add(panel);
         panel.add(button1);
