@@ -6,7 +6,11 @@ import javax.swing.*;
 
 import static java.lang.System.*;
 
-public class GameFrame extends JFrame {
+public class GameFrame extends JFrame implements Runnable {
+    private Thread gameThread;
+    private boolean running = false;
+    private JFrame window;
+
     private void init() {
         // set window size
         this.setSize(300, 300);
@@ -36,7 +40,10 @@ public class GameFrame extends JFrame {
         // give the button a purpose
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                JOptionPane.showMessageDialog(getComponent(0), "START");
+                // Remove button1 from panel then refresh the panel
+                panel.remove(button1);
+                panel.revalidate();
+                panel.repaint();
             }
         });
     }
@@ -44,5 +51,29 @@ public class GameFrame extends JFrame {
     public GameFrame() {
         super("Snake");
         init();
+    }
+
+    public void startGameThread() {
+        gameThread = new Thread(this);
+        gameThread.start();
+
+    }
+
+    @Override
+    public void run() {
+        // game loop
+        while (running) {
+            // update game state
+            // Draw/Render to screen
+            repaint();
+        }
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g); // Clears the screen
+        // Custom drawing code here using Graphics object g
+        g.fillRect(100, 100, 100, 100); // Temp drawing 
+        g.dispose(); // release graphics resources
     }
 }
