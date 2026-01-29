@@ -70,9 +70,10 @@ public class GameFrame extends JFrame implements Runnable {
     }
 
     @Override
-    public void paint(Graphics g) {
+    public void paint(Graphics g) { 
         super.paint(g); // Clears the screen
         // Custom drawing code here using Graphics object g
+        // This is the background for snake 
         g.fillRect(0, 25, 300, 300); // makes a rectangle (x, y, width, height)
         g.dispose(); // release graphics resources
     }
