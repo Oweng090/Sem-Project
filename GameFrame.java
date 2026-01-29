@@ -13,7 +13,7 @@ public class GameFrame extends JFrame implements Runnable {
 
     private void init() {
         // set window size
-        this.setSize(300, 300);
+        this.setSize(800, 800);
         // make the window close
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         // make non-resizable
@@ -32,7 +32,7 @@ public class GameFrame extends JFrame implements Runnable {
         panel.add(button1);
         // set the layout and minimun size
         this.setLayout(new FlowLayout());
-        this.setMinimumSize(new Dimension(300, 300));
+        this.setMinimumSize(new Dimension(800, 800));
         // pack
         this.pack();
         // make visible
@@ -73,7 +73,7 @@ public class GameFrame extends JFrame implements Runnable {
     public void paint(Graphics g) {
         super.paint(g); // Clears the screen
         // Custom drawing code here using Graphics object g
-        g.fillRect(25, 25, 300, 300); // makes a rectangle (x, y, width, height)
+        g.fillRect(0, 25, 300, 300); // makes a rectangle (x, y, width, height)
         g.dispose(); // release graphics resources
     }
 }
