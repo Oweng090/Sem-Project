@@ -42,7 +42,7 @@ public class GameFrame extends JFrame implements Runnable {
             public void actionPerformed(ActionEvent arg0) {
                 // Remove button1 from panel then refresh the panel
                 panel.remove(button1);
-                panel.revalidate();
+                panel.revalidate(); // Remove panel with button later for now this just removes the button
                 panel.repaint();
             }
         });
@@ -73,7 +73,7 @@ public class GameFrame extends JFrame implements Runnable {
     public void paint(Graphics g) {
         super.paint(g); // Clears the screen
         // Custom drawing code here using Graphics object g
-        g.fillRect(100, 100, 100, 100); // Temp drawing 
+        g.fillRect(25, 25, 300, 300); // makes a rectangle (x, y, width, height)
         g.dispose(); // release graphics resources
     }
 }
