@@ -40,10 +40,10 @@ public class GameFrame extends JFrame implements Runnable {
         // give the button a purpose
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                // Remove button1 from panel then refresh the panel
-                panel.remove(button1);
-                panel.revalidate(); // Remove panel with button later for now this just removes the button
-                panel.repaint();
+                // Remove the panel containing 'button1'
+                GameFrame.this.remove(panel);
+                GameFrame.this.revalidate();
+                GameFrame.this.repaint();
             }
         });
     }
