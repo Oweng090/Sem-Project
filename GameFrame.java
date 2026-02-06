@@ -42,6 +42,7 @@ public class GameFrame extends JFrame implements Runnable {
             public void actionPerformed(ActionEvent arg0) {
                 // Remove the panel containing 'button1'
                 GameFrame.this.remove(panel);
+                GameFrame.this.SnakeSpawn(getGraphics());
                 GameFrame.this.revalidate();
                 GameFrame.this.repaint();
             }
@@ -76,5 +77,11 @@ public class GameFrame extends JFrame implements Runnable {
         // This is the background for snake 
         g.fillRect(0, 0, 800, 800); // makes a rectangle (x, y, width, height)
         g.dispose(); // release graphics resources
+    }
+    
+    public void SnakeSpawn(Graphics g) {
+        super.paint(g);
+        g.setColor(Color.GREEN);
+        g.drawRect(50, 50, 15, 15);
     }
 }
