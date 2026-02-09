@@ -2,6 +2,7 @@
 import java.util.*;
 import java.awt.event.*;
 import java.awt.*;
+import java.awt.image.BufferStrategy;
 import javax.swing.*;
 
 import static java.lang.System.*;
@@ -81,7 +82,16 @@ public class GameFrame extends JFrame implements Runnable {
     
     public void SnakeSpawn(Graphics g) {
         super.paint(g);
+        BufferStrategy bs = getBufferStrategy();
+        if(bs == null){
+            createBufferStrategy(3);
+            return;
+        }
+        g = bs.getDrawGraphics();
         g.setColor(Color.GREEN);
-        g.drawRect(50, 50, 15, 15);
+        g.drawRect(10, 10, 15, 15);
+        g.dispose();
+        bs.show();
+        this.repaint();
     }
 }
